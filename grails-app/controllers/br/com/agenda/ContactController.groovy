@@ -2,9 +2,10 @@ package br.com.agenda
 
 class ContactController {
     def contactService
+    def springSecurityService
 
     def index() {
-        model :[contact:Contact.findAll()]
+        model :[contact:Contact.findAllByUser(springSecurityService.currentUserId)]
     }
 
     def create(){}

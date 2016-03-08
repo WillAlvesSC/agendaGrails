@@ -2,8 +2,9 @@ package br.com.agenda
 
 class Contact {
 
-    static belongsTo = [group:ContactGroup]
+    static belongsTo = [user:User]
 
+    ContactGroup group
     String name
     String telephone
     String email

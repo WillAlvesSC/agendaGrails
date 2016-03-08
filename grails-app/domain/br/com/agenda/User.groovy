@@ -9,7 +9,7 @@ class User implements Serializable {
 
 	private static final long serialVersionUID = 1
 
-    static  hasMany = [contactGroup:ContactGroup]
+    static  hasMany = [contactGroup:ContactGroup,contact:Contact]
 	transient springSecurityService
 
 	String username
