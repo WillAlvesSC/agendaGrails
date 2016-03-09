@@ -5,7 +5,7 @@ class ContactController {
     def springSecurityService
 
     def index() {
-        model :[contact:Contact.findAllByUser(springSecurityService.currentUser)]
+        model :[contactList:Contact.findAllByUser(springSecurityService.currentUser)]
     }
 
     def create(){
@@ -19,6 +19,16 @@ class ContactController {
 
     def saveContact(){
         def contact = contactService.saveContact(params)
+
+        if(contact.validate()){
+            redirect(view:'/sucess')
+        }else{
+            redirect(view:'/fail')
+        }
+    }
+
+    def updateContact(){
+        def contact = contactService.updateContact(params)
 
         if(contact.validate()){
             redirect(view:'/sucess')

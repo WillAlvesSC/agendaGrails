@@ -4,7 +4,7 @@
 <div class="row-fluid sortable">
     <div class="box span12">
         <div class="box-header" data-original-title>
-            <h2><i class="fa fa-users"></i><span class="break"></span>Users</h2>
+            <h2><i class="fa fa-users"></i><span class="break"></span>Grupos</h2>
             <div class="box-icon">
                 <a href="#" class="btn-setting"><i class="halflings-icon white wrench"></i></a>
                 <a href="#" class="btn-minimize"><i class="halflings-icon white chevron-up"></i></a>

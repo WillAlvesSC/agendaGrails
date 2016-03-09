@@ -15,9 +15,9 @@
             <table class="table table-striped table-bordered bootstrap-datatable datatable">
                 <thead>
                 <tr>
-                    <th width="60%">Nome</th>
+                    <th width="40%">Nome</th>
                     <th>Email</th>
-                    <th>Telefone</th>
+                    <th  width="10%">Telefone</th>
                     <th>Grupo</th>
                     <th>Actions</th>
                 </tr>
@@ -30,10 +30,10 @@
                             <td class="center">${it.telephone}</td>
                             <td class="center">${it.group.name}</td>
                             <td class="center">
-                                <a class="btn btn-danger edit" href="#"  id="${it.id}">
-                                    <i class="fa fa-trash"></i>
+                                <a class="btn btn-primary edit" href="${createLink(controller: 'contact',action: 'edit' ,params:[id:it.id])}">
+                                    <i class="fa fa-pencil-square-o"></i>
                                 </a>
-                                <a class="btn btn-danger delete" href="#"  id="${it.id}">
+                                <a class="btn btn-danger delete" href=""  id="${it.id}">
                                     <i class="fa fa-trash"></i>
                                 </a>
                             </td>
@@ -50,6 +50,21 @@
 <script>
     var url = "${createLink(controller: 'contact',action: 'deleteContact')}";
     $('.delete').on('click',function(){
+        $(this).parents('tr').first().remove();
+        var id = $(this).attr('id');
+        console.log(id);
+        $.ajax({
+            url: url,
+            data:{'id': id},
+            type: 'POST',
+            success: function () {
+                $(this).parents('tr').first().remove();
+            }
+        });
+    });
+
+    var urlEdit = "${createLink(controller: 'contact',action: 'updateContact')}";
+    $('.edit').on('click',function(){
         $(this).parents('tr').first().remove();
         var id = $(this).attr('id');
         console.log(id);

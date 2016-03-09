@@ -23,13 +23,13 @@
                     <div class="control-group">
                         <label for="telephone" class="control-label">Telefone</label>
                         <div class="controls">
-                            <input type="text" placeholder="Digite o telefone" id="telephone" name="name" class="input-xlarge focused" required>
+                            <input type="text" placeholder="Digite o telefone" id="telephone" name="telephone" class="input-xlarge focused" required>
                         </div>
                     </div>
                     <div class="control-group">
                         <label for="email" class="control-label">Email</label>
                         <div class="controls">
-                            <input type="text" placeholder="Digite o Email" id="email" name="name" class="input-xlarge focused" >
+                            <input type="text" placeholder="Digite o Email" id="email" name="email" class="input-xlarge focused" >
                         </div>
                     </div>
                     <div class="control-group">
@@ -38,11 +38,12 @@
                             <select type="text" placeholder="Digite o Email" id="groupID" name="groupID" class="chzn-container chzn-container-single" >
                                 <option value="0">Select one option ...</option>
                                 <g:each in="${groups}">
-                                    <option value="it.id">${it.name}</option>
+                                    <option value="${it.id}">${it.name}</option>
                                 </g:each>
                             </select>
                         </div>
                     </div>
+                    <input type="hidden" value="${it.id}" name="contactId">
                     <div class="form-actions">
                         <button class="btn btn-primary" type="submit">Save changes</button>
                         <button class="btn">Cancel</button>

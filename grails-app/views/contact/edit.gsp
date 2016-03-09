@@ -12,7 +12,7 @@
             </div>
         </div>
         <div class="box-content">
-            <g:form controller="contact" action="create" class="form-horizontal">
+            <g:form controller="contact" action="updateContact" class="form-horizontal">
                 <fieldset>
                     <div class="control-group">
                         <label for="name" class="control-label">Nome</label>
@@ -23,16 +23,33 @@
                     <div class="control-group">
                         <label for="name" class="control-label">Telefone</label>
                         <div class="controls">
-                            <input type="text" value="${contact.telephone}"  placeholder="Digite o telefone" id="telephone" name="name" class="input-xlarge focused" required>
+                            <input type="text" value="${contact.telephone}"  placeholder="Digite o telefone" id="telephone" name="telephone" class="input-xlarge focused" required>
                         </div>
                     </div>
                     <div class="control-group">
                         <label for="name" class="control-label">Email</label>
                         <div class="controls">
-                            <input type="text" value="${contact.email}"  placeholder="Digite o Email" id="email" name="name" class="input-xlarge focused" >
+                            <input type="text" value="${contact.email}"  placeholder="Digite o Email" id="email" name="email" class="input-xlarge focused" >
                         </div>
                     </div>
-                    <input type="hidden" name="id" value="value="${contact.id}" ">
+                    <div class="control-group">
+                        <label for="name" class="control-label">Grupo</label>
+                        <div class="controls">
+                            <select type="text" placeholder="Digite o Email" id="groupID" name="groupID" class="chzn-container chzn-container-single" >
+                                <option value="0">Select one option ...</option>
+                                <g:each in="${groups}">
+                                    <g:if test="${it.id == contact.group.id}">
+                                        <option value="${it.id}" selected>${it.name}</option>
+                                    </g:if>
+                                    <g:if test="${it.id != contact.group.id}">
+                                        <option value="${it.id}">${it.name}</option>
+                                     </select>
+                                    </g:if>
+                                </g:each>
+                            </select>
+                        </div>
+                    </div>
+                    <input type="hidden" name="contactID" value="${contact.id}" >
                     <div class="form-actions">
                         <button class="btn btn-primary" type="submit">Save changes</button>
                         <button class="btn">Cancel</button>
