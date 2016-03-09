@@ -23,7 +23,6 @@
                 <tbody>
                 <g:each in="${groupList}">
                     <tr>
-                        <td>${it.name}</td>
                         <td class="center">${it.group.name}</td>
                         <td class="center">${it.size}</td>
                         <td class="center">

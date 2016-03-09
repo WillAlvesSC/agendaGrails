@@ -5,17 +5,20 @@ class ContactController {
     def springSecurityService
 
     def index() {
-        model :[contact:Contact.findAllByUser(springSecurityService.currentUserId)]
+        model :[contact:Contact.findAllByUser(springSecurityService.currentUser)]
     }
 
-    def create(){}
+    def create(){
+        log.debug(springSecurityService.currentUserId)
+        model:[groups:ContactGroup.findAllByUser(springSecurityService.currentUser)]
+    }
 
     def edit (Long id){
-        model: [contact: Contact.get(id)]
+        model: [contact: Contact.get(id),groups:ContactGroup.findAllByUser(springSecurityService.currentUser)]
     }
 
     def saveContact(){
-        def contact = contactService.save(params)
+        def contact = contactService.saveContact(params)
 
         if(contact.validate()){
             redirect(view:'/sucess')

@@ -11,6 +11,7 @@ class Contact {
 
 
     static constraints = {
+        email nullable: true
 
     }
 }

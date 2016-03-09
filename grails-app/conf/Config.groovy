@@ -135,8 +135,11 @@ grails.plugin.springsecurity.userLookup.userDomainClassName = 'br.com.agenda.Use
 grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'br.com.agenda.UserRole'
 grails.plugin.springsecurity.authority.className = 'br.com.agenda.Role'
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
-	'/':                ['permitAll'],
+
 	'/index':           ['permitAll'],
+    '/user/*':           ['permitAll'],
+    '/group/*':         ['permitAll'],
+    '/contact/*':       ['permitAll'],
 	'/index.gsp':       ['permitAll'],
 	'/assets/**':       ['permitAll'],
 	'/**/js/**':        ['permitAll'],

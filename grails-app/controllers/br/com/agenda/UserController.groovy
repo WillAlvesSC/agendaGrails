@@ -17,7 +17,7 @@ class UserController {
 
     }
 
-    def list(){
+    def index(){
         model:[userList:User.findAll()]
     }
 

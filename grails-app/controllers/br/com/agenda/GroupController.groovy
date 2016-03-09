@@ -5,7 +5,7 @@ class GroupController {
     def groupService
 
     def index() {
-        def listOfGroups = ContactGroup.findAllByUser(springSecurityService.currentUserId)
+        def listOfGroups = ContactGroup.findAllByUser(springSecurityService.currentUser)
         def groupsList = groupService.returnGroupList(listOfGroups)
 
         model:[groupList:groupsList]
@@ -19,7 +19,7 @@ class GroupController {
     }
 
     def saveGroup(){
-        def group = groupService.save(params)
+        def group = groupService.saveGroup(params)
 
         if(group.validate()){
             redirect(view:'/success')

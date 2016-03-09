@@ -7,10 +7,11 @@ import java.security.acl.Group
 @Transactional
 class GroupService {
     def springSecurityService
-    def save(params) {
+    def saveGroup(params) {
+        log.debug(params)
         def group = new ContactGroup(params)
             group.contact = Contact.get(params.contact)
-            group.user = springSecurityService.currentUserId
+            group.user = springSecurityService.currentUser
             group.save(failOnError: true,flush: true)
 
         return group
@@ -26,7 +27,7 @@ class GroupService {
 
         def groupMap = []
         groupList.each {
-            groupMap = [group:it,size:Contact.findAllByGroup(it).size()]
+            groupMap += ['group':it,'size':Contact.findAllByGroup(it).size()]
         }
 
         return groupMap
