@@ -36,7 +36,7 @@ environments {
             driverClassName = "org.postgresql.Driver"
             dialect = 'org.hibernate.dialect.PostgreSQLDialect'
 
-            uri = new URI(System.env.DATABASE_URL?:"url heroku")
+            uri = new URI(System.env.DATABASE_URL?:"postgres://kfdgmwqrzttyzt:0KLVKpEfI1S6ah2Z2n2Ju3rUdy@ec2-107-21-101-67.compute-1.amazonaws.com:5432/ddhnkvj7g4o0k0")
 
             url = "jdbc:postgresql://" + uri.host + ":" + uri.port + uri.path
             username = uri.userInfo.split(":")[0]
