@@ -10,7 +10,8 @@
 </head>
 <body>
 <div class="text-center row-fluid">
-    <g:link absolute="true" controller="user" action="validate" id="${code}"><em>Clique aqui<strong> para confirmar seu cadastro </strong></em></g:link>
+    <a href="http://agenda.willalves.com/validate/${code}"><em>Clique aqui<strong> para confirmar seu cadastro </strong></em></a>
+x
 </div>
 
 </body>
