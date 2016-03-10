@@ -1,5 +1,5 @@
 <meta name="layout" content="/principal/main"/>
-
+<script src="http://digitalbush.com/wp-content/uploads/2014/10/jquery.maskedinput.js"></script>
 <title>Lista Grupos</title>
 <div class="row-fluid sortable ui-sortable">
     <div class="box span12">
@@ -23,7 +23,7 @@
                     <div class="control-group">
                         <label for="telephone" class="control-label">Telefone</label>
                         <div class="controls">
-                            <input type="text" placeholder="Digite o telefone" id="telephone" name="telephone" class="input-xlarge focused" required>
+                            <input type="text" placeholder="Digite o telefone" id="telephone" name="telephone" class="input-xlarge focused telephone" required>
                         </div>
                     </div>
                     <div class="control-group">
@@ -57,3 +57,19 @@
     </div><!--/span-->
 
 </div>
+<script>
+    jQuery("input.telephone")
+            .mask("(99) 9999-9999?9")
+            .focusout(function (event) {
+                var target, phone, element;
+                target = (event.currentTarget) ? event.currentTarget : event.srcElement;
+                phone = target.value.replace(/\D/g, '');
+                element = $(target);
+                element.unmask();
+                if(phone.length > 10) {
+                    element.mask("(99) 99999-999?9");
+                } else {
+                    element.mask("(99) 9999-9999?9");
+                }
+            });
+</script>
