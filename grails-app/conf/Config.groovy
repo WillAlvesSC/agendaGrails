@@ -138,6 +138,8 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 
 	'/index':           ['IS_AUTHENTICATED_FULLY'],
     '/user/signup':     ['permitAll'],
+    '/user/saveuser':     ['permitAll'],
+    '/user/validate':     ['permitAll'],
     '/group/*':         ['IS_AUTHENTICATED_FULLY'],
     '/contact/*':       ['IS_AUTHENTICATED_FULLY'],
 	'/index.gsp':       ['IS_AUTHENTICATED_FULLY'],

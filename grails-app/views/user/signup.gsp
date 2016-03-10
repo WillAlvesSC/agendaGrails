@@ -10,7 +10,7 @@
     }
 </style>
 <g:form controller="user" action="saveUser" class="form-horizontal text-center" style="margin-top: 15%;">
-    <fieldset>
+
         <legend class="text-left">Cadastro de Usuario</legend>
         <div class="control-group">
             <label class="control-label" for="username">Login</label>
@@ -29,6 +29,4 @@
             <button class="btn">Cancel</button>
         </div>
 
-
-        </fieldset>
 </g:form>

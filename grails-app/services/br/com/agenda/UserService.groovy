@@ -12,7 +12,7 @@ class UserService {
         def user = new User(params)
             user.confirmationToken = UUID.randomUUID().toString()
             user.save(failOnError: true,flush: true)
-        def userRole = new UserRole(user,Role.findAllByAuthority('ROLE_USER'))
+        def userRole = new UserRole(user,Role.findAllByAuthority('ROLE_USER')[0])
             userRole.save(failOnError: true,flush: true)
 
         return user

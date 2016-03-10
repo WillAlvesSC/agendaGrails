@@ -17,11 +17,12 @@ class UserController {
 
     def saveUser(){
 
+        log.debug(params)
         def user = userService.save(params)
 
         if(user.validate()){
            sendMailConfirmation(user)
-           redirect(uri: '/')
+           //redirect(uri: '/')
         }
 
     }
