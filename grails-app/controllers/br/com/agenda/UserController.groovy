@@ -1,11 +1,14 @@
 package br.com.agenda
 
+import grails.plugin.springsecurity.annotation.Secured
+
 class UserController {
     def userService
     def mailService
 
     def signup() { }
 
+    @Secured(['ROLE_ADMIN'])
     def index(){
         model:[userList:User.findAll()]
     }
