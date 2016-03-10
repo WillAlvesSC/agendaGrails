@@ -15,10 +15,18 @@ class UserController {
         def user = userService.save(params)
 
         if(user.validate()){
-            redirect(view:"/sucess")
+           sendMailConfirmation(user)
+            redirect(view:"/success")
         }else{
             redirect(view:"/fail")
         }
+
+    }
+
+    def validate(String id){
+        def user = userService.confirmAccount(id)
+        log.debug(user)
+
 
     }
 

@@ -28,6 +28,18 @@ class GroupController {
         }
     }
 
+    def updateGroup(){
+        def group  = groupService.update(params)
+
+        if(group.validate()){
+            redirect(view:'/success')
+        }else{
+            redirect(view:'/fail')
+        }
+
+
+    }
+
     def deleteGroup(){
         def response = groupService.delete(params)
 

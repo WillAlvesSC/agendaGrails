@@ -26,8 +26,8 @@
                         <td class="center">${it.group.name}</td>
                         <td class="center">${it.size}</td>
                         <td class="center">
-                            <a class="btn btn-danger edit" href="#"  id="${it.group.id}">
-                                <i class="fa fa-trash"></i>
+                            <a class="btn btn-primary edit" href="${createLink(controller: 'group',action: 'edit' ,params:[id:it.group.id])}" >
+                                <i class="fa fa-pencil-square-o"></i>
                             </a>
                             <a class="btn btn-danger delete" href="#"  id="${it.group.id}">
                                 <i class="fa fa-trash"></i>

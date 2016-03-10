@@ -17,6 +17,14 @@ class GroupService {
         return group
     }
 
+    def update(params){
+        def group = ContactGroup.get(params.idGroup)
+            group.name = params.name
+            group.save(failOnError: true,flush: true)
+
+        return group
+    }
+
     def delete(params){
         def response = ContactGroup.get(params.id).delete(flush: true)
 
