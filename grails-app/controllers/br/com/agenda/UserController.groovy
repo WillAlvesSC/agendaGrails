@@ -10,7 +10,9 @@ class UserController {
 
     @Secured(['ROLE_ADMIN'])
     def index(){
+
         model:[userList:User.findAll()]
+
     }
 
     def saveUser(){
@@ -19,21 +21,18 @@ class UserController {
 
         if(user.validate()){
            sendMailConfirmation(user)
-            redirect(view:"/success")
-        }else{
-            redirect(view:"/fail")
+           redirect(uri: '/')
         }
 
     }
 
     def validate(String id){
+
         def user = userService.confirmAccount(id)
         log.debug(user)
 
 
     }
-
-
 
     def sendMailConfirmation(User user){
 

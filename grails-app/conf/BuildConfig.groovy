@@ -5,7 +5,7 @@ grails.project.test.reports.dir = "target/test-reports"
 grails.project.work.dir = "target/work"
 grails.project.target.level = 1.6
 grails.project.source.level = 1.6
-//grails.project.war.file = "target/${appName}-${appVersion}.war"
+grails.project.war.file = "/home/william/Downloads/agenda.war"
 
 grails.project.fork = [
     // configure settings for compilation JVM, note that if you alter the Groovy version forked compilation is required
@@ -48,8 +48,8 @@ grails.project.dependency.resolution = {
 
     dependencies {
         // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes e.g.
-        // runtime 'mysql:mysql-connector-java:5.1.29'
-        runtime 'org.postgresql:postgresql:9.4.1207'
+        runtime 'mysql:mysql-connector-java:5.1.29'
+        //runtime 'org.postgresql:postgresql:9.4.1207'
         //test "org.grails:grails-datastore-test-support:1.0.2-grails-2.4"
     }
 
@@ -65,8 +65,6 @@ grails.project.dependency.resolution = {
         compile "org.grails.plugins:resources:1.2.14"
         compile ":mail:1.0.7"
 
-        compile ':heroku:1.0.1'
-        compile ':cloud-support:1.0.8'
 
         // plugins needed at runtime but not for compilation
         runtime ":hibernate4:4.3.10" // or ":hibernate:3.6.10.18"

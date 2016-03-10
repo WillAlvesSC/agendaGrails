@@ -20,10 +20,8 @@ class ContactController {
     def saveContact(){
         def contact = contactService.saveContact(params)
 
-        if(contact.validate()){
-            redirect(view:'/sucess')
-        }else{
-            redirect(view:'/fail')
+        if(contact.validate()) {
+            redirect(action: 'index')
         }
     }
 
@@ -31,9 +29,7 @@ class ContactController {
         def contact = contactService.updateContact(params)
 
         if(contact.validate()){
-            redirect(view:'/sucess')
-        }else{
-            redirect(view:'/fail')
+            redirect(action: 'index')
         }
     }
 

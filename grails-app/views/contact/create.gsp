@@ -4,7 +4,7 @@
 <div class="row-fluid sortable ui-sortable">
     <div class="box span12">
         <div data-original-title="" class="box-header">
-            <h2><i class="halflings-icon white edit"></i><span class="break"></span>Adicionar Novo Contato</h2>
+            <h2><i class="fa fa-phone"></i><span class="break"></span>Adicionar Novo Contato</h2>
             <div class="box-icon">
                 <a class="btn-setting" href="#"><i class="halflings-icon white wrench"></i></a>
                 <a class="btn-minimize" href="#"><i class="halflings-icon white chevron-up"></i></a>
@@ -37,13 +37,15 @@
                         <div class="controls">
                             <select type="text" placeholder="Digite o Email" id="groupID" name="groupID" class="chzn-container chzn-container-single" >
                                 <option value="0">Select one option ...</option>
-                                <g:each in="${groups}">
-                                    <option value="${it.id}">${it.name}</option>
-                                </g:each>
+                                <g:if test="${groups != null}">
+                                    <g:each in="${groups}">
+                                        <option value="${it.id}">${it.name}</option>
+                                    </g:each>
+                                </g:if>
                             </select>
                         </div>
                     </div>
-                    <input type="hidden" value="${it.id}" name="contactId">
+
                     <div class="form-actions">
                         <button class="btn btn-primary" type="submit">Save changes</button>
                         <button class="btn">Cancel</button>

@@ -1,4 +1,4 @@
-<meta name="layout" content="/signupLayout/main"/>
+<meta name="layout" content="/principal/main"/>
 
 <title>Lista Contatos</title>
 <div class="row-fluid sortable">

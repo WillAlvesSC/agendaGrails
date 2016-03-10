@@ -23,6 +23,7 @@ class UserService {
 
         if (user[0] != null){
             user[0].confirmationToken = ""
+            user[0].enabled = true
             user[0].save(failOnError: true,flush: true)
 
             return true

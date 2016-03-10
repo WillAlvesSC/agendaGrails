@@ -22,9 +22,7 @@ class GroupController {
         def group = groupService.saveGroup(params)
 
         if(group.validate()){
-            redirect(view:'/success')
-        }else{
-            redirect(view:'/fail')
+            redirect(action: 'index')
         }
     }
 
@@ -32,9 +30,7 @@ class GroupController {
         def group  = groupService.update(params)
 
         if(group.validate()){
-            redirect(view:'/success')
-        }else{
-            redirect(view:'/fail')
+            redirect(action: 'index')
         }
 
 

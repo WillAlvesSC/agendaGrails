@@ -26,9 +26,6 @@
                     <tr>
                         <td class="center">${it.username}</td>
                         <td class="center">
-                            <a class="btn btn-danger edit" href="#"  id="${it.id}">
-                                <i class="fa fa-trash"></i>
-                            </a>
                             <a class="btn btn-danger delete" href="#"  id="${it.id}">
                                 <i class="fa fa-trash"></i>
                             </a>
