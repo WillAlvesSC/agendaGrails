@@ -20,18 +20,29 @@ class UserController {
         log.debug(params)
         def user = userService.save(params)
 
-        if(user.validate()){
+        if(user.id){
            sendMailConfirmation(user)
-           //redirect(uri: '/')
+            redirect(action: 'status')
         }
 
+    }
+
+    def status(){
+
+        if (params.message){
+            model :[message: params.message]
+        }
     }
 
     def validate(String id){
 
         def user = userService.confirmAccount(id)
-        log.debug(user)
 
+        if(user){
+            redirect(action: 'status', params: [message:'Sua conta foi ativada com Sucesso. parabens'])
+        }else{
+            redirect(action: 'status', [message:'Erro ao Ativar sua conta , verifique a url e tente novamente.'])
+        }
 
     }
 
