@@ -17,7 +17,7 @@
                     <div class="control-group">
                         <label for="name" class="control-label">Nome</label>
                         <div class="controls">
-                            <input type="text" value="${contact.name}" placeholder="Digite o nome do Grupo" id="name" name="name" class="input-xlarge focused" required>
+                            <input type="text" value="${contact.name}" placeholder="Digite o nome do Contato" id="name" name="name" class="input-xlarge focused" required>
                         </div>
                     </div>
                     <div class="control-group">

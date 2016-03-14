@@ -50,6 +50,7 @@
                         <button class="btn btn-primary" type="submit">Save changes</button>
                         <button class="btn">Cancel</button>
                     </div>
+
                 </fieldset>
             </g:form>
 
@@ -57,6 +58,12 @@
     </div><!--/span-->
 
 </div>
+<div class="control-group">
+    <g:if test='${flash.message}'>
+        <div class='alert alert-danger text-center"'>${flash.message}</div>
+    </g:if>
+</div>
+
 <script>
     jQuery("input.telephone")
             .mask("(99) 9999-9999?9")

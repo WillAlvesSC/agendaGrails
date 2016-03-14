@@ -18,11 +18,19 @@ class ContactController {
     }
 
     def saveContact(){
-        def contact = contactService.saveContact(params)
 
-        if(contact.validate()) {
-            redirect(action: 'index')
+        if (ContactGroup.findAllWhere(id:Long.parseLong(params.groupID.trim()),user: springSecurityService.currentUser).empty){
+            log.debug('caiu')
+            flash.message = "Por favor escolha um grupo válido, se não tiver pos cadastrados, por favor cadastre  um e tente novamente."
+            redirect(controller:'contact' , action: 'create')
+        }else{
+            def contact = contactService.saveContact(params)
+            if(contact.validate()) {
+                redirect(action: 'index')
+            }
         }
+
+
     }
 
     def updateContact(){
